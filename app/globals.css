@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+/* ── Design Tokens → CSS Variables ─────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary */
+  --color-primary-50:  #FFF3EE;
+  --color-primary-100: #FFE6D9;
+  --color-primary-200: #FFCDB3;
+  --color-primary-300: #FFB08C;
+  --color-primary-400: #FF8A51;
+  --color-primary-500: #FF5100;
+  --color-primary-600: #E64800;
+  --color-primary-700: #B33800;
+  --color-primary-800: #802800;
+  --color-primary-900: #4D1800;
+
+  /* Neutral */
+  --color-neutral-50:  #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-200: #E5E7EB;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-400: #9CA3AF;
+  --color-neutral-500: #6B7280;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1F2937;
+  --color-neutral-900: #1E252E;
+
+  /* Success */
+  --color-success-50:  #ECFDF5;
+  --color-success-500: #06C270;
+  --color-success-700: #047857;
+
+  /* Error */
+  --color-error-50:  #FEF2F2;
+  --color-error-500: #FF3B30;
+
+  /* Warning */
+  --color-warning-50:  #FFFBEB;
+  --color-warning-500: #F59E0B;
+
+  /* Semantic */
+  --color-brand:            var(--color-primary-500);
+  --color-brand-hover:      var(--color-primary-600);
+  --color-brand-subtle:     var(--color-primary-50);
+  --color-brand-emphasis:   var(--color-primary-100);
+
+  --color-text-primary:     var(--color-neutral-900);
+  --color-text-secondary:   var(--color-neutral-500);
+  --color-text-disabled:    var(--color-neutral-300);
+  --color-text-inverse:     #ffffff;
+  --color-text-brand:       var(--color-primary-500);
+
+  --color-bg-default:       #ffffff;
+  --color-bg-subtle:        var(--color-neutral-50);
+  --color-bg-muted:         var(--color-neutral-100);
+  --color-bg-inverse:       var(--color-neutral-900);
+
+  --color-border-default:   var(--color-neutral-200);
+  --color-border-strong:    var(--color-neutral-400);
+  --color-border-brand:     var(--color-primary-500);
 }
 
+/* ── Tailwind v4 theme extension ────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--color-bg-default);
+  --color-foreground: var(--color-text-primary);
+  --color-brand:      var(--color-primary-500);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-default);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
